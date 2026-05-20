@@ -1,0 +1,24 @@
+<template>
+    <div class="slds-utility-panel__content slds-p-around_small">
+
+        <!-- Spinner exibido enquanto o flow reinicializa entre navegações -->
+        <template lwc:if={isResetting}>
+            <div class="slds-align_absolute-center slds-p-around_large">
+                <lightning-spinner
+                    alternative-text="Carregando endereço..."
+                    size="small">
+                </lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Flow renderizado após detectar (ou não) o contexto do registro atual -->
+        <template lwc:if={showFlow}>
+            <lightning-flow
+                flow-api-name="Cadastro_de_Endere_os"
+                flow-input-variables={flowInputVariables}
+                onstatuschange={handleFlowStatusChange}>
+            </lightning-flow>
+        </template>
+
+    </div>
+</template>
