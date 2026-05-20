@@ -34,7 +34,7 @@ force-app/
 sfdx-project.json
 ```
 
-## Como funciona por baixo dos panos?
+## Arquitetura e funcionamento
 - O componente usa o `@wire(CurrentPageReference)` para monitorar mudanças de página no Lightning Experience.
 - Quando detecta um novo registro, reinicializa o Flow passando o `recordId` como variável de entrada.
 - Se não houver contexto de registro, o Flow é aberto "em branco".
